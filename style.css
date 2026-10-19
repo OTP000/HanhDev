@@ -1,0 +1,86 @@
+:root{--bg:#041726;--accent:#0ea5ff;--dark:#021018}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;background:var(--bg);color:#fff;overflow-x:hidden}
+a{text-decoration:none}
+
+header{position:fixed;top:0;left:0;width:100%;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.4rem 10%}
+.logo{color:#fff;font-size:1.5rem;font-weight:600}
+nav a{color:#fff;font-size:1.05rem;margin-left:2.2rem;transition:.3s}
+nav a:hover{color:var(--accent)}
+
+section{min-height:100vh;display:flex;align-items:center;padding:6rem 10% 3rem;position:relative}
+h2{color:var(--accent);font-weight:700}
+
+/* buttons */
+.btn{position:relative;display:inline-block;overflow:hidden;padding:.7rem 1.3rem;border-radius:6px;font:600 .95rem 'Poppins',sans-serif;border:2px solid var(--accent);cursor:pointer;transition:.3s;z-index:1}
+.btn-fill{background:var(--accent);color:var(--dark)}
+.btn-fill:hover{box-shadow:0 0 18px var(--accent)}
+.btn-outline{background:transparent;color:var(--accent)}
+.btn-outline::before{content:"";position:absolute;inset:0;width:0;background:var(--accent);transition:.4s;z-index:-1}
+.btn-outline:hover::before{width:100%}
+.btn-outline:hover{color:var(--dark)}
+
+.socials a{display:inline-flex;justify-content:center;align-items:center;width:36px;height:36px;margin-right:.9rem;border:1.5px solid var(--accent);border-radius:50%;color:var(--accent);font-size:.85rem;transition:.3s}
+.socials a:hover{background:var(--accent);color:var(--dark);box-shadow:0 0 14px var(--accent)}
+
+/* home */
+.hero-img{position:absolute;top:0;right:0;width:50%;height:100%;background:url(images/hero.jpg) center top/cover no-repeat;-webkit-mask-image:linear-gradient(to right,transparent,#000 55%);mask-image:linear-gradient(to right,transparent,#000 55%)}
+.home-content{position:relative;z-index:2}
+.home h1{font-size:clamp(2.2rem,4.5vw,3.6rem);line-height:1.2;max-width:8.5em;font-weight:700}
+.home h3{color:var(--accent);font-size:clamp(1.3rem,2.8vw,2.1rem);font-weight:600;margin:.4rem 0 1.6rem;min-height:1.6em}
+.btns{display:flex;gap:1.6rem}
+.home-socials{position:absolute;left:10%;bottom:3.5rem;z-index:2}
+
+/* education */
+.education{justify-content:flex-end}
+.edu-img{position:absolute;top:0;left:0;width:45%;height:100%;background:url(images/education.jpg) center/cover no-repeat;-webkit-mask-image:linear-gradient(to right,#000 50%,transparent);mask-image:linear-gradient(to right,#000 50%,transparent)}
+.edu-content{position:relative;width:40%;margin-right:4%}
+.edu-content h2{font-size:clamp(2rem,3.8vw,3rem);margin-bottom:1.2rem}
+.edu-content p{font-weight:600;font-size:1rem;line-height:1.5;margin-bottom:.9rem}
+.edu-content .btn{margin-top:.8rem}
+
+/* projects */
+.projects{justify-content:space-between;padding:6rem 6% 3rem;background:#031321}
+.side-title{font-size:clamp(2rem,4vw,3.4rem);writing-mode:vertical-rl;color:#4fc3ff;text-shadow:0 0 8px #0ea5ff,0 0 22px #0ea5ff,0 0 42px #0ea5ff}
+.side-title.left{transform:rotate(180deg)}
+.cards{display:flex;gap:1rem;justify-content:center;flex:1}
+.card{position:relative;width:min(23%,270px);aspect-ratio:3/4;border-radius:10px;overflow:hidden;transition:.4s;cursor:pointer}
+.card img{width:100%;height:100%;object-fit:cover;display:block}
+.card:hover{transform:scale(1.06);box-shadow:0 0 28px rgba(14,165,255,.6)}
+.overlay{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;gap:.4rem;padding:1rem;background:linear-gradient(transparent 30%,rgba(0,0,0,.9));opacity:0;transition:.4s}
+.card:hover .overlay{opacity:1}
+.overlay h4{font-size:1.15rem}
+.overlay p{font-size:.78rem;color:#ccc}
+.overlay .btn{align-self:flex-start;padding:.35rem 1rem;font-size:.8rem}
+
+/* about */
+.about{gap:3rem}
+.about-img{width:min(26%,300px);aspect-ratio:3/4;object-fit:cover;border-radius:6px;box-shadow:0 8px 40px rgba(14,165,255,.55)}
+.about-content{max-width:560px}
+.about-content h2{font-size:clamp(2rem,3.8vw,3rem);margin-bottom:1.2rem}
+.about-content p{font-size:.95rem;line-height:1.8;font-weight:300}
+
+/* contact */
+.contact{justify-content:center}
+.form-box{width:min(100%,560px);padding:1.8rem 2.2rem 2rem;background:rgba(2,12,22,.7);border-radius:8px;box-shadow:0 0 35px rgba(14,165,255,.45);text-align:center}
+.form-box h2{font-size:2rem;margin-bottom:1.5rem}
+.form-box input,.form-box textarea{width:100%;padding:.8rem 1rem;margin-bottom:1rem;background:transparent;border:1.5px solid rgba(14,165,255,.55);border-radius:6px;color:#fff;font:300 .85rem 'Poppins',sans-serif;outline:none;transition:.3s}
+.form-box textarea{height:130px;resize:none}
+.form-box input:focus,.form-box textarea:focus{border-color:var(--accent);box-shadow:0 0 14px rgba(14,165,255,.6)}
+::placeholder{color:#7c8a96}
+
+/* footer */
+footer{text-align:center;padding:1.4rem 1rem;border-top:1px solid rgba(14,165,255,.35);background:#031321}
+footer p{font-size:.8rem;margin-bottom:.7rem}
+footer .socials a{margin:0 .35rem}
+
+@media(max-width:800px){
+  header{padding:1rem 5%}nav a{margin-left:1rem;font-size:.85rem}
+  section{padding:6rem 6% 3rem}
+  .hero-img{width:100%;opacity:.35}.btns{flex-wrap:wrap;gap:1rem}
+  .education{justify-content:center}.edu-img{width:100%;opacity:.3}.edu-content{width:100%;margin:0}
+  .projects{flex-direction:column;gap:1.5rem}.side-title{writing-mode:horizontal-tb;transform:none!important}
+  .side-title.right{display:none}.cards{flex-direction:column;align-items:center}.card{width:min(80%,300px)}
+  .about{flex-direction:column;text-align:center}.about-img{width:min(70%,260px)}
+}
